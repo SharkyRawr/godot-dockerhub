@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       godot_version:
-        description: 'Godot Engine version to build (e.g. 4.7)'
+        description: 'Godot Engine version to build (e.g. 4.7.1)'
         required: false
-        default: '4.7'
+        default: '4.7.1'
   workflow_call:
     inputs:
       godot_version:
@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ github.actor }}
-          GODOT_VERSION: ${{ inputs.godot_version || '4.7' }}
+          GODOT_VERSION: ${{ inputs.godot_version || '4.7.1' }}
         run: |
           set -euo pipefail
 
@@ -102,7 +102,7 @@ jobs:
 
     env:
       GHCR_IMAGE: ghcr.io/sharkyrawr/godot-docker
-      GODOT_VERSION: ${{ inputs.godot_version || '4.7' }}
+      GODOT_VERSION: ${{ inputs.godot_version || '4.7.1' }}
 
     steps:
       - name: Checkout
@@ -177,7 +177,7 @@ jobs:
 
     env:
       GHCR_IMAGE: ghcr.io/sharkyrawr/godot-docker
-      GODOT_VERSION: ${{ inputs.godot_version || '4.7' }}
+      GODOT_VERSION: ${{ inputs.godot_version || '4.7.1' }}
 
     steps:
       - name: Download digests
