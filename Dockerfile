@@ -5,7 +5,7 @@ WORKDIR /app
 ARG EDITION=
 # Options: "_mono" or "" (for standard)
 
-ARG VERSION=4.7.1
+ARG VERSION=4.7.2
 ARG VERSION_NAME=${VERSION}-stable${EDITION}
 ARG BASE_URL=https://github.com/godotengine/godot-builds/releases/download/${VERSION}-stable
 
